@@ -3,9 +3,10 @@ const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzUsR5mM_0N3Mr401SBG
 
 // Kredensial Login Admin
 const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'admin123';
+const ADMIN_PASS = 'ukmterbaik';
 
 // DOM Elements
+const heroBanner = document.getElementById('hero-banner');
 const formPendaftaran = document.getElementById('formPendaftaran');
 const formSection = document.getElementById('form-section');
 const sectionAdmin = document.getElementById('sectionAdmin');
@@ -152,8 +153,14 @@ formLogin.addEventListener('submit', function (e) {
 
   if (user === ADMIN_USER && pass === ADMIN_PASS) {
     modalLogin.classList.add('hidden');
-    formSection.classList.add('hidden');
+    
+    // SEMBUNYIKAN HERO BANNER DAN FORM PENDAFTARAN
+    if (heroBanner) heroBanner.classList.add('hidden');
+    if (formSection) formSection.classList.add('hidden');
+    
+    // TAMPILKAN KHUSUS DASHBOARD ADMIN
     sectionAdmin.classList.remove('hidden');
+    
     formLogin.reset();
     loginError.classList.add('hidden');
     
@@ -165,7 +172,10 @@ formLogin.addEventListener('submit', function (e) {
 
 btnLogout.addEventListener('click', () => {
   sectionAdmin.classList.add('hidden');
-  formSection.classList.remove('hidden');
+  
+  // TAMPILKAN KEMBALI HERO BANNER DAN FORM PENDAFTARAN
+  if (heroBanner) heroBanner.classList.remove('hidden');
+  if (formSection) formSection.classList.remove('hidden');
 });
 
 // 5. Filter & Export Events
