@@ -242,23 +242,181 @@ body {
   transition: transform 0.3s ease;
   transform: translateX(25px);  
 }
-/* RESPONSIVE LAYAR HP / TABLET */
-@media (max-width: 850px) {
+/* =========================================================
+   CSS RESPONSIVE LAYAR HP & TABLET (MEDIA QUERIES)
+   ========================================================= */
+
+@media (max-width: 768px) {
+  /* 1. KONTEN CONTAINER UTAMA */
+  .main-wrapper {
+    margin: 15px auto;
+    padding: 0 12px;
+  }
+
+  /* 2. NAVBAR NAVIGATION */
+  .navbar-content {
+    padding: 12px 15px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  /* Sembunyikan menu tautan biasa di HP agar navbar tidak berantakan */
+  .nav-links a {
+    display: none;
+  }
+
+  .btn-admin-nav {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+
+  /* 3. HERO BANNER BIRU DI HP */
   .hero-card-blue {
     flex-direction: column;
     text-align: center;
-    padding: 35px 20px 0 20px;
+    padding: 30px 20px 0 20px; /* Padding bawah 0px agar foto menempel di dasar */
+    border-radius: 20px;
     min-height: auto;
   }
-  
+
   .hero-text-content {
+    max-width: 100%;
     padding-bottom: 20px;
   }
 
+  .hero-title {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .btn-hero-action {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    width: 100%; /* Tombol dibuat full width di HP */
+    max-width: 250px;
+  }
+
+  .slider-dots {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  /* FOTO HERO / TIM DI HP */
+  .hero-illustration {
+    width: 100%;
+    justify-content: center;
+  }
+
   .hero-mascot-img {
-    height: 280px;
-    transform: scale(1.1); /* Zoom disesuaikan di layar kecil HP */
+    height: 250px; /* Ukuran foto disesuaikan agar pas di layar HP */
+    transform: scale(1) translateX(0) !important; /* Reset zoom & pergeseran agar center */
     transform-origin: bottom center;
+    margin-bottom: 0;
+  }
+
+  /* 4. FORMULIR PENDAFTARAN DI HP */
+  .form-container-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .section-heading {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* Mengubah semua baris input menjadi 1 kolom vertikal */
+  .form-row-3, 
+  .form-row-2 {
+    grid-template-columns: 1fr !important;
+    gap: 0;
+  }
+
+  .input-group {
+    margin-bottom: 16px;
+  }
+
+  .input-group label {
+    font-size: 0.82rem;
+  }
+
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    padding: 11px 14px;
+    font-size: 0.88rem;
+    border-radius: 10px;
+  }
+
+  .btn-submit-blue {
+    padding: 14px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+
+  /* 5. DASHBOARD ADMIN DI HP */
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .admin-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .btn-logout {
+    width: 100%;
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-controls {
+    flex-direction: column;
+  }
+
+  .action-buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .action-buttons button {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+
+  /* Menjaga tabel admin tetap bisa di-scroll kesamping tanpa merusak layout HP */
+  .table-responsive {
+    border-radius: 8px;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 10px 12px;
+    white-space: nowrap; /* Mencegah teks terpotong melipat jelek */
+  }
+
+  /* 6. MODAL LOGIN DI HP */
+  .modal-box {
+    padding: 25px 20px;
+    border-radius: 16px;
   }
 }
 
