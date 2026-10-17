@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pendaftaran UKM MULTIMEDIA - IKIP PGRI BOJONEGORO</title>
-  <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,49 +16,34 @@
   <header class="navbar-container">
     <div class="navbar-content">
       <div class="brand">
-        <img src="logo.png" alt="Logo UKM MM" class="brand-logo" onError="this.style.display='none'; document.getElementById('alt-brand-icon').style.display='flex';" />
-        <div id="alt-brand-icon" class="brand-icon-fallback" style="display:none;"><i class="fa-solid fa-photo-film"></i></div>
+        <img src="logo.png" alt="Logo UKM MM" class="brand-logo" onError="this.style.display='none';" />
         <span class="brand-name">UKM MULTIMEDIA</span>
       </div>
 
       <nav class="nav-links">
         <a href="#hero-banner" class="nav-item active">Home</a>
         <a href="#form-section" class="nav-item">Formulir</a>
-        <a href="#about-section" class="nav-item">Info</a>
-        <button id="btnOpenLogin" class="btn-admin-nav">
-          <i class="fa-solid fa-user-gear"></i> Portal Admin
-        </button>
       </nav>
     </div>
   </header>
 
-  <!-- MAIN CONTAINER -->
   <main class="main-wrapper">
-
-    <!-- HERO BANNER CARD (Gaya MULMEDFEST Warna Biru) -->
+    <!-- HERO BANNER -->
     <section id="hero-banner" class="hero-card-blue">
       <div class="hero-text-content">
-        <h1 class="hero-title">UKM MULTIMEDIA</h1>
+        <h1 class="hero-title">UKM MULTIMEDIA 2026</h1>
         <p class="hero-subtitle">
-          Wadah Kreatif Mahasiswa Terbesar! Ikuti keseruan produksi video, fotografi, desain grafis, dan pengembangan web bersama UKM MULTIMEDIA - IKIP PGRI Bojonegoro.
+          Wadah Kreatif Mahasiswa Terbesar! Ikuti keseruan produksi video, fotografi, desain grafis, dan pengembangan web bersama keluarga besar UKM MULTIMEDIA IKIP PGRI Bojonegoro.
         </p>
         <a href="#form-section" class="btn-hero-action">Daftar Sekarang</a>
-        
-        <!-- Slider Indicator Dots -->
-        <div class="slider-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
       </div>
 
       <div class="hero-illustration">
-        <!-- Maskot / Ilustrasi Karakter -->
-        <img src="fotoo.png" alt="Mascot / Logo UKM MM" class="hero-mascot-img" onError="this.src='https://cdn-icons-png.flaticon.com/512/4140/4140048.png';" />
+        <img src="fotoo.png" alt="Mascot / Logo UKM MM" class="hero-mascot-img" />
       </div>
     </section>
 
-    <!-- SECTION 1: FORM PENDAFTARAN -->
+    <!-- FORM PENDAFTARAN -->
     <section id="form-section" class="form-container-card">
       <h2 class="section-heading">Form Pendaftaran Anggota</h2>
 
@@ -132,102 +116,7 @@
         </button>
       </form>
     </section>
-
-    <!-- SECTION 2: DASHBOARD ADMIN (Hidden by default) -->
-    <section id="sectionAdmin" class="form-container-card hidden">
-      <div class="admin-header">
-        <div>
-          <h2><i class="fa-solid fa-chart-line"></i> Dashboard Admin</h2>
-          <p>Kelola data pendaftar UKM MULTIMEDIA secara realtime</p>
-        </div>
-        <button id="btnLogout" class="btn-logout">
-          <i class="fa-solid fa-right-from-bracket"></i> Keluar
-        </button>
-      </div>
-
-      <!-- Stats Cards -->
-      <div class="stats-grid">
-        <div class="stat-card">
-          <i class="fa-solid fa-users stat-icon"></i>
-          <div>
-            <h3 id="statTotal">0</h3>
-            <span>Total Pendaftar</span>
-          </div>
-        </div>
-        <div class="stat-card">
-          <i class="fa-solid fa-user-clock stat-icon"></i>
-          <div>
-            <h3 id="statToday">0</h3>
-            <span>Pendaftar Hari Ini</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Controls & Filter -->
-      <div class="admin-controls">
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="inputSearch" placeholder="Cari nama, NIM, prodi, semester..." />
-        </div>
-        <div class="action-buttons">
-          <button id="btnExport" class="btn-secondary">
-            <i class="fa-solid fa-file-excel"></i> Export CSV
-          </button>
-          <button id="btnClearAll" class="btn-danger-outline">
-            <i class="fa-solid fa-trash"></i> Info Hapus
-          </button>
-        </div>
-      </div>
-
-      <!-- Table Container -->
-      <div class="table-responsive">
-        <table>
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Nama</th>
-              <th>NIM / Prodi / Sem</th>
-              <th>Kontak</th>
-              <th>Alamat</th>
-              <th>Alasan</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-            <!-- Data dimasukkan via JS -->
-          </tbody>
-        </table>
-      </div>
-    </section>
-
   </main>
-
-  <!-- MODAL LOGIN ADMIN -->
-  <div id="modalLogin" class="modal-backdrop hidden">
-    <div class="modal-box">
-      <button id="btnCloseLogin" class="btn-close">&times;</button>
-      <div class="modal-header">
-        <i class="fa-solid fa-shield-halved modal-icon"></i>
-        <h3>LOGIN ADMIN</h3>
-        <p>Masukkan kredensial admin untuk mengakses data</p>
-      </div>
-      <form id="formLogin">
-        <div class="input-group">
-          <label for="adminUsername">Username</label>
-          <input type="text" id="adminUsername" placeholder="Masukkan username" required />
-        </div>
-        <div class="input-group">
-          <label for="adminPassword">Password</label>
-          <input type="password" id="adminPassword" placeholder="Masukkan password" required />
-        </div>
-        <p id="loginError" class="error-msg hidden">Username atau password salah!</p>
-        <button type="submit" class="btn-submit-blue">
-          <span>Masuk System</span>
-          <i class="fa-solid fa-arrow-right-to-bracket"></i>
-        </button>
-      </form>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>

@@ -711,3 +711,22 @@ th {
 .hidden {
   display: none !important;
 }
+
+/* TAMPILAN HALAMAN LOGIN STANDALONE */
+.login-page-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+.login-standalone-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
